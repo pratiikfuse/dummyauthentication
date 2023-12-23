@@ -23,7 +23,7 @@ function Details() {
         setUser(JSON.stringify(data).split(","));
         // console.log(user);
       });
-  }, []);
+  }, [navigate]);
   return (
     <div id="detail-container">
       <h1>User Data</h1>
