@@ -12,7 +12,7 @@ function Login() {
     let email = emailRef.current.value;
     let password = passwordRef.current.value;
 
-    if (email.length == 0 || password.length == 0) {
+    if (email.length === 0 || password.length === 0) {
       setInvalidCredentials(true);
       return;
     } else {
