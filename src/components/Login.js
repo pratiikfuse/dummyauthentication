@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Login() {
@@ -6,6 +6,14 @@ function Login() {
   let passwordRef = useRef("");
   let [invalidCredentials, setInvalidCredentials] = useState(false);
   let navigate = useNavigate();
+
+  useEffect(() => {
+    if (localStorage.getItem("user") !== null) {
+      setTimeout(() => {
+        navigate("/details");
+      }, 2000);
+    }
+  }, []);
 
   function handleLogin(e) {
     e.preventDefault();
